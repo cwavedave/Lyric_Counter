@@ -52,11 +52,11 @@ def lyrics_frequency(song_lyrics):
             word_frequency[word] += 1
         else:
             word_frequency[word] = 1
-    return word_frequency
 
-song_lyrics = lyrics_frequency(song)
 
-sorted_tuples = sorted(song_lyrics.items(), key=operator.itemgetter(1), reverse=True)
-sorted_dict = {k: v for k, v in sorted_tuples}
+    word_frequency = sorted(word_frequency.items(), key=operator.itemgetter(1), reverse=True)
+    sorted_dict = {k: v for k, v in word_frequency}
 
-print(sorted_dict)
+    return sorted_dict
+
+print(lyrics_frequency(song))
